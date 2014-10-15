@@ -271,6 +271,17 @@ class MonAE
 	}
 	
 	/**
+     	* Create a new draft invoice with options values
+     	* 
+     	* @param array $options
+     	* 
+     	*/
+    	public function newDraftInvoice($options = array())
+    	{
+        	return $this->newDraftItem("invoice","invoices", $options);
+    	}
+	
+	/**
 	 * Suppliers
 	 *
 	 */
@@ -527,6 +538,27 @@ class MonAE
 		curl_close($curl);
 		return $this->getOutput($return);
 	}
+	
+	private function newDraftItem($name, $plurial, $options = array())
+    	{
+	        $creation = json_encode($options);
+	
+	        $curl = curl_init();
+	        curl_setopt($curl, CURLOPT_URL, 'https://www.facturation.pro/firms/'.$this->_firmid.'/'.$plurial.'.json?type_doc=draft');
+	        curl_setopt($curl, CURLOPT_POST, true);
+	        curl_setopt($curl, CURLOPT_POSTFIELDS, $creation);
+	        curl_setopt($curl, CURLOPT_USERPWD, $this->_login.":".$this->_password);
+	        curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
+	        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	        curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+	        curl_setopt($curl, CURLOPT_SSLVERSION, 3);
+	        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+	        curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+	
+	        $return = curl_exec($curl);
+	        curl_close($curl);
+	        return $this->getOutput($return);
+    	}
 
 	private function updateItem($name, $_ID, $options = array())
 	{
