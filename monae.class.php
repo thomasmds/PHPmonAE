@@ -455,7 +455,6 @@ class MonAE
 		curl_setopt($curl, CURLOPT_URL, "https://www.facturation.pro/firms/".$this->_firmid."/".$name.".json" . $url);
 		curl_setopt($curl, CURLOPT_USERPWD, $this->_login.":".$this->_password);
 		curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_COOKIESESSION, true);
@@ -475,7 +474,6 @@ class MonAE
 		curl_setopt($curl, CURLOPT_URL, "https://www.facturation.pro/firms/".$this->_firmid."/".$name."/".$_ID.".json");
 		curl_setopt($curl, CURLOPT_USERPWD, $this->_login.":".$this->_password);
 		curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_COOKIESESSION, true);
@@ -494,7 +492,6 @@ class MonAE
 		curl_setopt($curl, CURLOPT_URL, "https://www.facturation.pro/firms/".$this->_firmid."/".$name."/".$_ID.".pdf");
 		curl_setopt($curl, CURLOPT_USERPWD, $this->_login.":".$this->_password);
 		curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_COOKIESESSION, true);
@@ -518,7 +515,6 @@ class MonAE
 		curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_COOKIESESSION, true);
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
 		curl_setopt($curl, CURLOPT_HEADER, true);
@@ -539,7 +535,6 @@ class MonAE
 
 		curl_setopt($curl, CURLOPT_USERPWD, $this->_login.":".$this->_password);
 		curl_setopt($curl, CURLOPT_USERAGENT,'User-Agent: '.$this->_nameApp.' ('.$this->_email.')');
-		curl_setopt($curl, CURLOPT_SSLVERSION, 3);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_COOKIESESSION, true);
